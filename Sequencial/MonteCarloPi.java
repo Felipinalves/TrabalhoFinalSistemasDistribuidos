@@ -25,10 +25,14 @@ public class MonteCarloPi{
 
         // Calcula Pi
         double piEstimate = 4.0 * pointsInsideCircle / numPoints;
-        System.out.println("Estimativa de Pi: " + piEstimate);
+        
+        // Cálculo dos pontos fora do círculo
+        int pointsOutsideCircle = numPoints - pointsInsideCircle;
 
-        // Calcula e exibe o tempo de execução
-        long executionTime = endTime - startTime;
-        System.out.println("Tempo de execução (ms): " + executionTime);
+        // Exibe os resultados
+        System.out.println("Pontos dentro: " + pointsInsideCircle);
+        System.out.println("Pontos fora: " + pointsOutsideCircle);
+        System.out.println("Valor de Pi encontrado: " + piEstimate);
+        System.out.println("Tempo (ms): " + (endTime - startTime));
     }
 }

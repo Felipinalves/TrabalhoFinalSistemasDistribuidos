@@ -17,7 +17,7 @@ def simular_pontos(quantidade):
 # Função principal
 if __name__ == "__main__":
     total_iteracoes = 3000000  # Quantidade total de iterações
-    n_processos = 4             # Número de processos paralelos
+    n_processos = 8             # Número de processos paralelos
 
     iteracoes_por_processo = total_iteracoes // n_processos
 
@@ -37,12 +37,10 @@ if __name__ == "__main__":
 
     # Medir tempo final
     fim = time.perf_counter()
-    tempo_execucao = fim - inicio
+    tempo_execucao_ms = (fim - inicio) * 1000  # Convertendo para milissegundos
 
     # Imprimir os resultados
     print("Número de pontos dentro:", total_dentro)
     print("Número de pontos fora:", total_fora)
-    print("Valor simulado de Pi:", sim_pi)
-    print("Precisão:", 100 * (1 - abs(sim_pi - math.pi) / math.pi), "%")
-    print("Quantidade de iterações:", total_iteracoes)
-    print(f"Tempo de execução: {tempo_execucao:.2f} segundos")
+    print("Valor de Pi encontrado:", sim_pi)
+    print(f"Tempo de execução: {tempo_execucao_ms:.2f} ms")

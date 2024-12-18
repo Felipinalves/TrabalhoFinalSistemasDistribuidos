@@ -13,6 +13,7 @@ public class MonteCarloPiCliente {
 
             Random random = new Random();
             int pontosDentroCirculo = 0;
+            
             for (int i = 0; i < NUM_PONTOS; i++) {
                 double x = random.nextDouble() * 2 - 1;
                 double y = random.nextDouble() * 2 - 1;
